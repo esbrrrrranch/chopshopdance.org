@@ -42,3 +42,11 @@ The first pass was prepared on November 7, 2026. The WordPress XML export suppli
 The first pass checked every local image, stylesheet, script, PDF, and page reference, compared all 140 live text blocks, and checked JavaScript syntax. Browser review covered the homepage at desktop, tablet, and mobile widths, the staff layout, and dropdown navigation. The existing development server was reused. These checks do not constitute a full accessibility audit or a complete external-link audit.
 
 The dance-film follow-up verified all nine additional text blocks and the hero image, retained all 17 external artist and social links, and removed the temporary contact notice and its `noindex` directive.
+
+## Mobile fidelity follow-up
+
+Comparison with the live site revealed that the first pass missed its separate mobile header and changed hero typography and image proportions. The shared header now switches at 640px to a text masthead and hamburger button with expandable navigation groups. The mobile menu supports Escape, outside clicks, and keyboard focus. Navigation remains available without JavaScript.
+
+The follow-up restores the original 62px mobile hero title, natural card image proportions, hidden spacers, and mobile block padding. The system-font fallback still produces different line wrapping from Proxima Nova. Shared asset URLs include a version query so browsers refresh the revised CSS and JavaScript.
+
+Browser checks at 320px, 390px, 640px, 641px, and 1280px confirmed the header breakpoint, menu behavior, and absence of horizontal page overflow. Mobile navigation to an interior page and stacked staff content were also checked.

@@ -14,6 +14,7 @@ a:focus-visible, summary:focus-visible, button:focus-visible, input:focus-visibl
 .skip-link { position: absolute; z-index: 10; top: -100px; left: 24px; padding: 12px; background: #fff; }
 .skip-link:focus { top: 10px; }
 .site-header { max-width: 1200px; margin: auto; padding: 10px 0 18px; }
+.menu-toggle, .mobile-brand { display: none; }
 .brand { display: inline-block; vertical-align: top; }
 .brand img { display: block; width: 287px; height: auto; }
 nav { display: flex; flex-wrap: wrap; align-items: baseline; gap: 20px; margin-top: 7px; padding-left: 5px; }
@@ -57,7 +58,7 @@ hr { border: 0; border-top: 1px solid #ddd; margin: 15px 0; clear: both; }
 .photo { margin: 0; }
 .photo img { display: block; max-width: 100%; width: 100%; height: auto; }
 .photo figcaption { margin-top: 12px; font-size: 13px; }
-.card img { aspect-ratio: 1; object-fit: cover; }
+.card img { height: auto; }
 .card figcaption { margin-top: 20px; }
 .card h2 { font-size: 28px; }
 .card p { font-size: 18px; }
@@ -88,25 +89,38 @@ figure { margin: 0; }
   .site-header, .main-content { margin-left: 24px; margin-right: 24px; }
 }
 @media (max-width: 640px) {
-  .site-header { padding: 18px 0; }
-  .brand img { width: 230px; }
-  nav { gap: 12px 18px; margin-top: 18px; padding: 0; }
-  nav > a, summary { font-size: 13px; letter-spacing: .08em; }
-  .submenu { max-width: min(280px, 75vw); }
-  .nav-group:last-of-type .submenu { left: auto; right: 0; }
-  .hero { min-height: 360px; padding: 150px 24px; }
-  .hero h1 { font-size: 36px; }
+  .site-header { position: relative; margin: 0; padding: 20px 0; text-align: center; }
+  .brand { display: block; padding: 0 44px; color: #000; line-height: 25px; }
+  .brand:hover { text-decoration: none; }
+  .brand img { display: none; }
+  .mobile-brand { display: block; overflow: hidden; font-size: 15px; font-weight: 700; letter-spacing: .08em; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
+  .site-header[data-menu-open] .menu-toggle { display: grid; }
+  .menu-toggle { position: absolute; top: 15px; left: 10px; place-items: center; width: 32px; height: 32px; padding: 0; border: 0; background: transparent; color: #999; cursor: pointer; }
+  .menu-icon { width: 18px; height: 12px; border-top: 2px solid; border-bottom: 2px solid; position: relative; }
+  .menu-icon::after { position: absolute; content: ""; top: 3px; left: 0; width: 18px; border-top: 2px solid; }
+  nav { display: block; margin-top: 15px; padding: 0; }
+  .site-header[data-menu-open="false"] nav { display: none; }
+  nav > a, summary { display: block; padding: 10px 0; font-size: 20px; line-height: 24px; letter-spacing: .12em; }
+  summary::before { content: "+ "; }
+  .nav-group[open] > summary::before { content: "− "; }
+  .submenu { position: static; width: auto; max-width: none; padding: 0 24px; box-shadow: none; }
+  .submenu a { padding: 10px 0; font-size: 15px; }
+  .hero { min-height: 0; padding: 150px 24px; }
+  .hero h1 { font-size: 62px; }
   .main-content { padding: 50px 0; }
   .row { display: block; }
   .column { width: 100%; }
   .float-right { float: none; width: 100%; margin: 0; }
-  .spacer { height: 0; }
-  .block:has(> .spacer) { padding: 0; }
-  .card img { aspect-ratio: 4 / 3; }
-  blockquote { font-size: 25px; }
+  .spacer { display: none; }
+  .block:has(> .spacer) { display: none; }
+  .column > .block:first-child { padding-top: 12px; }
+  .column > .block:last-child { padding-bottom: 12px; }
+  .card h2 { font-size: 30px; }
+  .card p { font-size: 13.25px; }
   .newsletter { padding: 35px 20px; }
-  .site-footer { padding: 40px 24px; }
+  .site-footer { padding: 50px 24px; }
 }
+
 .quote blockquote { font-family: Georgia, "Times New Roman", serif; font-style: italic; }
 .quote figcaption { text-align: right; }
 .section-heading { font-size: 36px; font-weight: 300; line-height: 1.5; letter-spacing: 0; }

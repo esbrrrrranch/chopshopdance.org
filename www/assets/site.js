@@ -1,3 +1,24 @@
+const siteHeader = document.querySelector('.site-header');
+const menuToggle = document.querySelector('.menu-toggle');
+const mobileViewport = window.matchMedia('(max-width: 640px)');
+
+const setMenuOpen = (open) => {
+  siteHeader.dataset.menuOpen = String(open);
+  menuToggle.setAttribute('aria-expanded', String(open));
+  menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+};
+
+if (siteHeader && menuToggle) {
+  setMenuOpen(false);
+  menuToggle.addEventListener('click', () => {
+    setMenuOpen(siteHeader.dataset.menuOpen !== 'true');
+  });
+  mobileViewport.addEventListener('change', () => setMenuOpen(false));
+  siteHeader.querySelector('nav').addEventListener('click', (event) => {
+    if (event.target.closest('a')) setMenuOpen(false);
+  });
+}
+
 const navigationGroups = document.querySelectorAll('.nav-group');
 
 navigationGroups.forEach((group) => {
@@ -10,6 +31,7 @@ navigationGroups.forEach((group) => {
 });
 
 document.addEventListener('click', (event) => {
+  if (siteHeader && !siteHeader.contains(event.target)) setMenuOpen(false);
   navigationGroups.forEach((group) => {
     if (!group.contains(event.target)) group.open = false;
   });
@@ -17,6 +39,12 @@ document.addEventListener('click', (event) => {
 
 document.addEventListener('keydown', (event) => {
   if (event.key !== 'Escape') return;
+  if (mobileViewport.matches && siteHeader?.dataset.menuOpen === 'true') {
+    setMenuOpen(false);
+    navigationGroups.forEach((group) => { group.open = false; });
+    menuToggle.focus();
+    return;
+  }
   navigationGroups.forEach((group) => {
     if (!group.open) return;
     group.open = false;

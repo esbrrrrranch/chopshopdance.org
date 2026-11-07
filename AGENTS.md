@@ -21,6 +21,7 @@
 - Keep local development accessible to non-engineers with Go installed. Document a direct Go command wherever Make is used, since Make may not be available.
 - Build the site with directly editable static HTML, CSS, and JavaScript, without a framework or production build step. First reproduce the current site closely, then review design improvements with Michael.
 - Preserve existing page routes, content, image descriptions, and photo credits. Keep the original export outside the deployed `www/` directory.
+- Preserve the original mobile layout at widths up to 640px, including the text masthead, collapsible navigation, stacked columns, and hero typography. Compare against the live mobile site when changing responsive styles.
 - Keep migration coverage, intentional differences, and launch questions current in `docs/migration.md`. Record downloaded asset sources in `export/asset-manifest.json`.
 - Use clearly labeled email fallbacks until replacement contact and newsletter services are selected. Do not imply that an email draft or signup request has been submitted.
 - Include the dance-film archive as public content. Michael removed its password and authorized migration of the page and any linked CHOP SHOP pages.
