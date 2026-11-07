@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Contact | CHOP SHOP
+  </title>
+  <meta content="Get in touch with CHOP SHOP: Bodies of Work, a contemporary dance festival in Bellevue, WA. Press, artist, and general inquiries welcome." name="description"/>
+  <link href="https://www.chopshopdance.org/contact/" rel="canonical"/>
+  <link href="/styles.css?v=9" rel="stylesheet"/>
+  <script defer="" src="/assets/site.js?v=2">
+  </script>
+ </head>
+ <body>
+{{template "header.html" .}}
+  <section class="hero">
+   <img alt="" class="hero-image" fetchpriority="high" src="/assets/images/adam-barruch-44a6715e.webp"/>
+   <h1>
+    Contact
+   </h1>
+  </section>
+  <main class="main-content" id="main">
+   <div class="page-layout">
+    <div class="layout-row">
+     <div class="layout-column layout-span-12">
+      <div class="content-block">
+       <section class="contact">
+        <h2>
+         Get in touch.
+        </h2>
+        <p>
+         Email
+         <a href="mailto:info@chopshopdance.org">
+          info@chopshopdance.org
+         </a>
+         or use the fields below to prepare a message in your email app.
+        </p>
+        <form id="contact-form">
+         <div class="name-fields">
+          <label>
+           First name
+           <input autocomplete="given-name" name="firstName" required=""/>
+          </label>
+          <label>
+           Last name
+           <input autocomplete="family-name" name="lastName" required=""/>
+          </label>
+         </div>
+         <label>
+          Email address
+          <input autocomplete="email" name="email" required="" type="email"/>
+         </label>
+         <label>
+          Subject
+          <input name="subject" required=""/>
+         </label>
+         <label>
+          Message
+          <textarea name="message" required="" rows="6"></textarea>
+         </label>
+         <button class="button" type="submit">
+          Open email draft
+         </button>
+         <p class="fine-print">
+          Your message is sent only when you send it from your email app.
+         </p>
+        </form>
+       </section>
+      </div>
+      <div class="content-block">
+       <hr/>
+      </div>
+      <div class="content-block">
+       <div class="text-content">
+        <p>
+         <em>
+          Banner Photo:  Adam Barruch performing his work Belladonna at CHOP SHOP 2014, photo by Rex Tranter.
+         </em>
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </main>
+{{template "footer.html" .}}
+ </body>
+</html>
