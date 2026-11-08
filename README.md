@@ -8,7 +8,7 @@ The original Squarespace content is stored in `export/Squarespace-Wordpress-Expo
 
 ## Project status
 
-The site root is `www/`. The first static migration includes 20 public pages, local images and the application PDF, archive videos, and the original navigation. GitHub Pages deployment is not configured yet.
+Editable site sources live in `www/`, shared HTML lives in `templates/`, and generated output goes to `dist/`. The first static migration includes 20 public pages, local images and the application PDF, archive videos, and the original navigation. GitHub Pages deployment is not configured yet.
 
 See [migration notes](docs/migration.md) for page coverage, verification, and remaining decisions.
 
@@ -23,12 +23,12 @@ make dev
 With only Go installed, run the equivalent command:
 
 ```sh
-go tool devd -l ./www
+go run ./cmd/site dev
 ```
 
 The repository pins [devd](https://github.com/cortesi/devd) in `go.mod` and records dependency checksums in `go.sum`. Go downloads and builds the tool automatically on the first run, which requires internet access and may take a little longer. No separate `devd` installation is needed.
 
-Open the local URL printed by `devd`. Changes to files in `www/` automatically reload the browser. Press `Ctrl+C` to stop the server.
+Open the local URL printed by `devd`. Changes to `www/` or `templates/` automatically rebuild the site and reload the browser. Template errors are printed in the terminal; the last successful build remains available until the error is corrected. Press `Ctrl+C` to stop the server.
 
 ## Editing the site
 
@@ -38,11 +38,23 @@ Start with the variables at the top of `styles.css` to change shared colors, fon
 
 Content uses `layout-row`, `layout-column`, and `layout-span-1` through `layout-span-12` for column widths, with `content-block` for spacing and `text-content` for prose. Columns stack at the 640px mobile breakpoint. Components such as `hero`, `photo`, `card`, `video`, and `archive-links` share their appearance across pages.
 
-Save a file while `make dev` is running to see the change in your browser. There is no production build step. Header and footer HTML is repeated on each page; update all pages when changing shared navigation or footer content.
+Edit `templates/header.html` or `templates/footer.html` to update shared content once. Pages include these files with `{{template "header.html" .}}` and `{{template "footer.html" .}}`. The header uses `.Path` to highlight the current page automatically. Redirect pages remain standalone HTML.
+
+Save a file while `make dev` is running to see the change in your browser. If an older development server is running, stop it and restart with the new command.
+
+## Building for deployment
+
+Run `make build` or, with only Go installed:
+
+```sh
+go run ./cmd/site build
+```
+
+The Go standard library renders the HTML templates and copies assets into `dist/`. This generated directory is ignored by Git; edit source files instead. GitHub Pages deployment will use a GitHub Actions workflow to build and upload `dist/`; that workflow is not configured yet. The build removes obsolete output files, so do not store hand-edited files there.
 
 ## Next steps
 
 1. Review visual fidelity, then make a shared design pass.
 2. Choose contact and newsletter services.
 3. Review dated content and external links.
-4. Configure GitHub Pages to deploy only `www/` at the custom domain root.
+4. Configure GitHub Pages to deploy only `dist/` at the custom domain root.

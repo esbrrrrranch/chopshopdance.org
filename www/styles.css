@@ -9,6 +9,9 @@
   --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-quote: Georgia, "Times New Roman", serif;
   --layout-gutter: 17px;
+  --nav-font-size: 18px;
+  --nav-font-weight: 500;
+  --nav-letter-spacing: .1em;
   --page-gutter: 24px;
   color-scheme: light;
   font-family: var(--font-body);
@@ -94,11 +97,11 @@ a:focus-visible, .nav-group > summary:focus-visible, button:focus-visible, input
   padding-left: 5px;
 }
 
-.site-nav > a, .nav-group > summary {
+.site-nav a, .nav-group > summary {
   color: #999;
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: .12em;
+  font-size: var(--nav-font-size);
+  font-weight: var(--nav-font-weight);
+  letter-spacing: var(--nav-letter-spacing);
   line-height: 1.5;
   text-transform: uppercase;
 }
@@ -127,7 +130,7 @@ a:focus-visible, .nav-group > summary:focus-visible, button:focus-visible, input
   top: 100%;
   left: -15px;
   width: max-content;
-  max-width: 320px;
+  max-width: calc(100vw - 48px);
   padding: 15px;
   background: var(--color-background);
   box-shadow: 0 5px 12px #0002;
@@ -136,8 +139,6 @@ a:focus-visible, .nav-group > summary:focus-visible, button:focus-visible, input
 .submenu a {
   display: block;
   padding: 7px 0;
-  color: #777;
-  font-size: 15px;
 }
 
 /* Style page banners. */
@@ -317,6 +318,16 @@ hr {
   padding-left: 12px;
 }
 
+/* Divide staff profiles between the portrait and biography. */
+.staff-profile {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+.staff-portrait, .staff-biography {
+  min-width: 0;
+}
+
 /* Style photographs, cards, quotes, and video embeds. */
 .photo {
   margin: 0;
@@ -485,12 +496,29 @@ figure {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 25px;
-  margin-bottom: 25px;
+  gap: 12px;
+  margin-top: 25px;
 }
 
 .social-links a {
-  color: var(--color-text);
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+}
+
+.social-links a:hover {
+  background: #333;
+  color: #fff;
+}
+
+.social-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
 }
 
 /* Keep content inside the viewport gutters. */
@@ -585,9 +613,7 @@ figure {
   .site-nav > a, .nav-group > summary {
     display: block;
     padding: 10px 0;
-    font-size: 20px;
     line-height: 24px;
-    letter-spacing: .12em;
   }
 
   .nav-group > summary::before {
@@ -608,7 +634,7 @@ figure {
 
   .submenu a {
     padding: 10px 0;
-    font-size: 15px;
+    line-height: 24px;
   }
 
   .hero {
@@ -642,11 +668,13 @@ figure {
     display: none;
   }
 
-  .layout-column > .content-block:first-child {
+  .layout-column > .content-block:first-child,
+  .staff-profile > div > .content-block:first-child {
     padding-top: 12px;
   }
 
-  .layout-column > .content-block:last-child {
+  .layout-column > .content-block:last-child,
+  .staff-profile > div > .content-block:last-child {
     padding-bottom: 12px;
   }
 

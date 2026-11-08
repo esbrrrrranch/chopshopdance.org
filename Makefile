@@ -1,4 +1,7 @@
-.PHONY: dev
+.PHONY: build dev
+
+build:
+	go run ./cmd/site build
 
 dev:
-	go tool devd -l ./www
+	go run ./cmd/site dev

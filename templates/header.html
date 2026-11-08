@@ -1,0 +1,55 @@
+  <a class="skip-link" href="#main">
+   Skip to content
+  </a>
+  <header class="site-header">
+   <button aria-controls="main-navigation" aria-expanded="false" aria-label="Open navigation" class="menu-toggle" type="button">
+    <span aria-hidden="true" class="menu-icon"></span>
+   </button>
+   <a class="brand" href="/">
+    <span class="mobile-brand">CHOP SHOP: Bodies of Work</span>
+    <img alt="CHOP SHOP: Bodies of Work" height="90" src="/assets/images/chop-shop-logo-pull-562c65ae.gif" width="287"/>
+   </a>
+   <nav class="site-nav" aria-label="Main navigation" id="main-navigation">
+    <a{{if eq .Path "index.html"}} aria-current="page"{{end}} href="/">
+     Home
+    </a>
+    <details class="nav-group">
+     <summary{{if or (eq .Path "sponsors-press/index.html") (eq .Path "support/index.html") (eq .Path "history/index.html") (eq .Path "staff/index.html")}} class="active"{{end}}>
+      About Us
+     </summary>
+     <div class="submenu">
+      <a{{if eq .Path "history/index.html"}} aria-current="page"{{end}} href="/history/">
+       The First Fourteen Years
+      </a>
+      <a{{if eq .Path "staff/index.html"}} aria-current="page"{{end}} href="/staff/">
+       Staff
+      </a>
+      <a{{if eq .Path "sponsors-press/index.html"}} aria-current="page"{{end}} href="/sponsors-press/">
+       Sponsors + Press
+      </a>
+      <a{{if eq .Path "support/index.html"}} aria-current="page"{{end}} href="/support/">
+       Support
+      </a>
+     </div>
+    </details>
+    <details class="nav-group">
+     <summary{{if or (eq .Path "apply/index.html") (eq .Path "festival-artists/index.html") (eq .Path "experience-dance-program/index.html")}} class="active"{{end}}>
+      The Festival
+     </summary>
+     <div class="submenu">
+      <a{{if eq .Path "festival-artists/index.html"}} aria-current="page"{{end}} href="/festival-artists/">
+       Festival Artists
+      </a>
+      <a{{if eq .Path "experience-dance-program/index.html"}} aria-current="page"{{end}} href="/experience-dance-program/">
+       Experience Dance Program
+      </a>
+      <a{{if eq .Path "apply/index.html"}} aria-current="page"{{end}} href="/apply/">
+       Apply
+      </a>
+     </div>
+    </details>
+    <a{{if eq .Path "contact/index.html"}} aria-current="page"{{end}} href="/contact/">
+     Contact
+    </a>
+   </nav>
+  </header>

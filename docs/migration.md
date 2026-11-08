@@ -2,7 +2,7 @@
 
 ## Direction
 
-Reproduce the current Squarespace site closely before making design changes. The site consists of directly editable HTML in `www/`, shared CSS, and a small navigation and contact script. There is no site generator or production build step.
+Reproduce the current Squarespace site closely before making design changes. The site consists of directly editable HTML in `www/`, shared CSS, and a small navigation and contact script. A small Go generator renders shared header and footer templates from `templates/` and copies assets into `dist/`. `make build` creates deployment output; `make dev` rebuilds changed sources and serves the output through `devd`.
 
 The first pass was prepared on November 7, 2026. The WordPress XML export supplied the page inventory and image descriptions. The live pages supplied the full text, layout, banners, quotes, buttons, and video embeds that the export omits. All 140 live text blocks were checked against the migrated pages.
 
@@ -34,7 +34,7 @@ The first pass was prepared on November 7, 2026. The WordPress XML export suppli
 2. Choose a newsletter provider and decide whether contact should use a hosted form or keep email.
 3. The dance-film archive is public. Its live source contains descriptions and credits but no film players; preserve that scope unless film access is explicitly added later.
 4. Review dated content. The application deadline in the copied text is November 5, 2026; older tickets and classes pages also retain their original dates and external links.
-5. Configure GitHub Pages to deploy only `www/` at the domain root. Root-relative links assume the custom domain or an account-level Pages site, not a repository subpath. The XML export and migration notes must remain outside the deployed directory.
+5. Configure GitHub Pages to deploy only `dist/` at the domain root. Root-relative links assume the custom domain or an account-level Pages site, not a repository subpath. The XML export and migration notes must remain outside the deployed directory.
 6. Confirm external archive links and video availability before launch. Deployment and DNS changes have not been made.
 
 ## Verification
@@ -54,5 +54,11 @@ Browser checks at 320px, 390px, 640px, 641px, and 1280px confirmed the header br
 ## Shared stylesheet
 
 All pages now use `www/styles.css`. It contains shared design variables, component styles, and responsive rules. Squarespace classes and editor metadata have been removed from the HTML, and inline presentation has moved into reusable classes. Navigation selectors are scoped to the shared navigation component so future content elements do not inherit menu styling.
+
+Dropdown links share the main navigation typography: 18px, medium weight, uppercase, and .1em letter spacing on desktop and mobile. Their width accommodates the longer labels.
+
+Footer social links appear below the attribution text and use a shared local SVG sprite for Instagram, Facebook, and email, with white graphics on black circles matching the original treatment. Each link retains an accessible label and a 44px touch target without an external icon dependency.
+
+Staff profiles use an explicit 40% portrait and 60% biography grid within their existing content section. This corrects the imported nested-column proportions. At a 1280px viewport, the portrait and text widths match the original at 377px and 583px; both stack to 342px at a 390px viewport. Font substitution still affects text wrapping.
 
 The cleanup preserves page text, links, image sources, and the restored mobile behavior. Before-and-after measurements of the homepage, staff page, and history page matched at 390px and 1280px widths.
