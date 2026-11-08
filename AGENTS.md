@@ -16,7 +16,7 @@
 
 - Migrate `https://www.chopshopdance.org/` from Squarespace to a static site hosted on GitHub Pages.
 - Use `export/Squarespace-Wordpress-Export-11-07-2026.xml` as the initial content source and retain it for reference during the migration.
-- Keep editable site files in `www/` and shared HTML in `templates/`. Use `make dev` to rebuild them into `dist/` and serve that output with `devd` and automatic browser reload.
+- Keep editable site files in `www/` and shared HTML in `templates/`. Use `make dev` (`go tool modd`) to rebuild them into `dist/` on source changes and serve that output with `devd` and automatic browser reload. Keep watcher configuration in `modd.conf` rather than custom Go code.
 - Track Go development tools with `tool` directives in `go.mod` and retain `go.sum` so contributors use pinned dependencies without installing tools globally.
 - Keep local development accessible to non-engineers with Go installed. Document a direct Go command wherever Make is used, since Make may not be available.
 - Build the site with directly editable HTML, CSS, and JavaScript, using Go’s standard `html/template` package to share the header and footer. `make build` generates static deployment files in `dist/`; no frontend framework or additional runtime is required. First reproduce the current site closely, then review design improvements with Michael.

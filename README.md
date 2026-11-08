@@ -23,12 +23,12 @@ make dev
 With only Go installed, run the equivalent command:
 
 ```sh
-go run ./cmd/site dev
+go tool modd
 ```
 
-The repository pins [devd](https://github.com/cortesi/devd) in `go.mod` and records dependency checksums in `go.sum`. Go downloads and builds the tool automatically on the first run, which requires internet access and may take a little longer. No separate `devd` installation is needed.
+The repository pins [modd](https://github.com/cortesi/modd) and [devd](https://github.com/cortesi/devd) in `go.mod` and records dependency checksums in `go.sum`. Go downloads and builds the tools automatically on the first run, which requires internet access and may take a little longer. No separate tool installation is needed.
 
-Open the local URL printed by `devd`. Changes to `www/` or `templates/` automatically rebuild the site and reload the browser. Template errors are printed in the terminal; the last successful build remains available until the error is corrected. Press `Ctrl+C` to stop the server.
+Open the local URL printed by `devd`. `modd.conf` watches `www/`, `templates/`, the Go generator, and module files. Changes automatically rebuild the site; `devd` watches `dist/` and reloads the browser. Template errors are printed in the terminal; the last successful build remains available until the error is corrected. Press `Ctrl+C` to stop the server.
 
 ## Editing the site
 

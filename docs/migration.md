@@ -2,7 +2,7 @@
 
 ## Direction
 
-Reproduce the current Squarespace site closely before making design changes. The site consists of directly editable HTML in `www/`, shared CSS, and a small navigation and contact script. A small Go generator renders shared header and footer templates from `templates/` and copies assets into `dist/`. `make build` creates deployment output; `make dev` rebuilds changed sources and serves the output through `devd`.
+Reproduce the current Squarespace site closely before making design changes. The site consists of directly editable HTML in `www/`, shared CSS, and a small navigation and contact script. A small Go generator renders shared header and footer templates from `templates/` and copies assets into `dist/`. `make build` creates deployment output; `make dev` uses the pinned `modd` tool and `modd.conf` to rebuild changed sources, while `devd` serves and reloads the output.
 
 The first pass was prepared on November 7, 2026. The WordPress XML export supplied the page inventory and image descriptions. The live pages supplied the full text, layout, banners, quotes, buttons, and video embeds that the export omits. All 140 live text blocks were checked against the migrated pages.
 
