@@ -20,6 +20,7 @@
 - Track Go development tools with `tool` directives in `go.mod` and retain `go.sum` so contributors use pinned dependencies without installing tools globally.
 - Keep local development accessible to non-engineers with Go installed. Document a direct Go command wherever Make is used, since Make may not be available.
 - Build the site with directly editable static HTML, CSS, and JavaScript, without a framework or production build step. First reproduce the current site closely, then review design improvements with Michael.
+- Keep all site styling in `www/styles.css`, with shared design variables and clearly organized component and responsive sections. Use descriptive site-owned classes instead of Squarespace classes, inline styles, or page-specific stylesheets.
 - Preserve existing page routes, content, image descriptions, and photo credits. Keep the original export outside the deployed `www/` directory.
 - Preserve the original mobile layout at widths up to 640px, including the text masthead, collapsible navigation, stacked columns, and hero typography. Compare against the live mobile site when changing responsive styles.
 - Keep migration coverage, intentional differences, and launch questions current in `docs/migration.md`. Record downloaded asset sources in `export/asset-manifest.json`.

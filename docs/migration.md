@@ -50,3 +50,9 @@ Comparison with the live site revealed that the first pass missed its separate m
 The follow-up restores the original 62px mobile hero title, natural card image proportions, hidden spacers, and mobile block padding. The system-font fallback still produces different line wrapping from Proxima Nova. Shared asset URLs include a version query so browsers refresh the revised CSS and JavaScript.
 
 Browser checks at 320px, 390px, 640px, 641px, and 1280px confirmed the header breakpoint, menu behavior, and absence of horizontal page overflow. Mobile navigation to an interior page and stacked staff content were also checked.
+
+## Shared stylesheet
+
+All pages now use `www/styles.css`. It contains shared design variables, component styles, and responsive rules. Squarespace classes and editor metadata have been removed from the HTML, and inline presentation has moved into reusable classes. Navigation selectors are scoped to the shared navigation component so future content elements do not inherit menu styling.
+
+The cleanup preserves page text, links, image sources, and the restored mobile behavior. Before-and-after measurements of the homepage, staff page, and history page matched at 390px and 1280px widths.

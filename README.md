@@ -32,7 +32,11 @@ Open the local URL printed by `devd`. Changes to files in `www/` automatically r
 
 ## Editing the site
 
-Edit `www/index.html` for the homepage or `www/<page>/index.html` for an interior page. Shared styling lives in `www/assets/site.css`, and navigation and email-draft behavior live in `www/assets/site.js`. Images are in `www/assets/images/`.
+Edit `www/index.html` for the homepage or `www/<page>/index.html` for an interior page. All styling lives in `www/styles.css`, and navigation and email-draft behavior live in `www/assets/site.js`. Images are in `www/assets/images/`.
+
+Start with the variables at the top of `styles.css` to change shared colors, fonts, content width, or gutters. The following sections cover document defaults, navigation, banners, content layout, media, forms, the footer, and responsive behavior. Use the existing component classes when editing pages; keep new styles in this same file.
+
+Content uses `layout-row`, `layout-column`, and `layout-span-1` through `layout-span-12` for column widths, with `content-block` for spacing and `text-content` for prose. Columns stack at the 640px mobile breakpoint. Components such as `hero`, `photo`, `card`, `video`, and `archive-links` share their appearance across pages.
 
 Save a file while `make dev` is running to see the change in your browser. There is no production build step. Header and footer HTML is repeated on each page; update all pages when changing shared navigation or footer content.
 
