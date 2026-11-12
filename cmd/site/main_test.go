@@ -86,7 +86,7 @@ func TestSiteTemplates(t *testing.T) {
 		if route == "404.html" {
 			expected = 0
 		}
-		if strings.Count(html, `aria-current="page"`) != expected {
+		if strings.Count(html, `<a aria-current="page"`) != expected {
 			t.Fatalf("incorrect active navigation: %s", route)
 		}
 	}

@@ -8,7 +8,7 @@ The original Squarespace content is stored in `export/Squarespace-Wordpress-Expo
 
 ## Project status
 
-Editable site sources live in `www/`, shared HTML lives in `templates/`, and generated output goes to `dist/`. The first static migration includes 20 public pages, local images and the application PDF, archive videos, and the original navigation. GitHub Pages deployment is not configured yet.
+Editable site sources live in `www/`, shared HTML lives in `templates/`, and generated output goes to `dist/`. The first static migration includes 20 public pages, local images and the application PDF, archive videos, and shared navigation. The current design adapts Tufte CSS to a mobile-first layout with system sans-serif typography. GitHub Pages deployment is not configured yet.
 
 See [migration notes](docs/migration.md) for page coverage, verification, and remaining decisions.
 
@@ -34,11 +34,15 @@ Open the local URL printed by `devd`. `modd.conf` watches `www/`, `templates/`, 
 
 Edit `www/index.html` for the homepage or `www/<page>/index.html` for an interior page. All styling lives in `www/styles.css`, and navigation and email-draft behavior live in `www/assets/site.js`. Images are in `www/assets/images/`.
 
-Start with the variables at the top of `styles.css` to change shared colors, fonts, content width, or gutters. The following sections cover document defaults, navigation, banners, content layout, media, forms, the footer, and responsive behavior. Use the existing component classes when editing pages; keep new styles in this same file.
+Start with the variables at the top of `styles.css` to change shared colors, fonts, content width, or gutters. The following sections cover document defaults, navigation, page headings, reading layouts, media, forms, the footer, and responsive behavior. Use the existing component classes when editing pages; keep new styles in this same file.
 
-Content uses `layout-row`, `layout-column`, and `layout-span-1` through `layout-span-12` for column widths, with `content-block` for spacing and `text-content` for prose. Columns stack at the 640px mobile breakpoint. Components such as `hero`, `photo`, `card`, `video`, and `archive-links` share their appearance across pages.
+Use normal headings, paragraphs, lists, and figures inside an `article.prose`. A `reading-layout` pairs the article with a `page-aside` for navigation or festival information. Long pages use native `details` for an expandable table of contents, placed before the article on mobile. Staff and artist pages use `section.profile` with a photograph and `profile-body`; festival history uses `section.archive-entry` with `archive-year` and `archive-body`.
 
-Edit `templates/header.html` or `templates/footer.html` to update shared content once. Pages include these files with `{{template "header.html" .}}` and `{{template "footer.html" .}}`. The header uses `.Path` to highlight the current page automatically. Redirect pages remain standalone HTML.
+The layout starts with one column, 20px body text, and a compact menu. At 900px it expands to adjacent content, a margin column where useful, and 22px body text. Keep body copy within `--measure`, and use the shared `photo`, `video`, `button`, and `newsletter` components. Avoid spacer elements, inline styles, and nested presentation wrappers.
+
+The stylesheet adapts [Tufte CSS](https://github.com/edwardtufte/tufte-css) rather than loading a second CSS file or its serif fonts. Its license is included at `www/licenses/tufte-css.txt`.
+
+Edit `templates/header.html` or `templates/footer.html` to update shared content once. Pages include these files with `{{template "header.html" .}}` and `{{template "footer.html" .}}`. The header uses `.Path` to highlight the current page automatically. Interior pages call `breadcrumbs.html` with label/URL pairs, for example `{{template "breadcrumbs.html" (breadcrumbs "Festival" "/festival-artists/" "Master Classes" "")}}`. Home is included automatically; an empty URL marks the current page. Redirect pages remain standalone HTML.
 
 Save a file while `make dev` is running to see the change in your browser. If an older development server is running, stop it and restart with the new command.
 
@@ -54,7 +58,7 @@ The Go standard library renders the HTML templates and copies assets into `dist/
 
 ## Next steps
 
-1. Review visual fidelity, then make a shared design pass.
+1. Review the new editorial design on phones and desktop.
 2. Choose contact and newsletter services.
 3. Review dated content and external links.
 4. Configure GitHub Pages to deploy only `dist/` at the custom domain root.

@@ -1,41 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <title>
-   Page not found | CHOP SHOP
-  </title>
-  <meta content="The page you are looking for may have moved. Explore the festival through the navigation above, or return to the homepage." name="description"/>
-  <link href="/styles.css?v=9" rel="stylesheet"/>
-  <script defer="" src="/assets/site.js?v=2">
-  </script>
-  <meta content="noindex" name="robots"/>
- </head>
- <body>
-{{template "header.html" .}}
-  <section class="hero">
-   <h1>
-    Page not found
-   </h1>
-  </section>
-  <main class="main-content" id="main">
-   <div class="content-block">
-    <p>
-     The page you are looking for may have moved. Explore the festival through the navigation above, or return to the homepage.
-    </p>
-    <p>
-     <a href="mailto:info@chopshopdance.org">
-      info@chopshopdance.org
-     </a>
-    </p>
-    <p>
-     <a href="/">
-      Return to the homepage
-     </a>
-    </p>
-   </div>
-  </main>
-{{template "footer.html" .}}
- </body>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Page not found | CHOP SHOP</title>
+    <meta content="The page you are looking for may have moved. Explore the festival through the navigation above, or return to the homepage." name="description"/>
+    <link href="/styles.css?v=19" rel="stylesheet"/>
+    <script defer="" src="/assets/site.js?v=3"></script>
+    <meta content="noindex" name="robots"/>
+  </head>
+  <body>
+    {{template "header.html" .}}
+    <main class="page" id="main">
+      {{template "breadcrumbs.html" (breadcrumbs "Page not found" "")}}
+      <header class="page-heading">
+        <div class="heading-copy">
+          <p class="eyebrow">CHOP SHOP</p>
+          <h1>Page not found.</h1>
+        </div>
+      </header>
+      <div class="reading-layout">
+        <article class="prose">
+          <p>The page you are looking for may have moved. Explore the festival through the navigation above, or return to the homepage.</p>
+          <p><a href="mailto:info@chopshopdance.org">info@chopshopdance.org</a></p>
+          <p><a href="/">Return to the homepage</a></p>
+        </article>
+        <aside class="page-aside">
+          <p class="eyebrow">Save the date</p>
+          <p class="aside-title">April 23–25, 2027</p>
+          <p>Meydenbauer Center Theatre Bellevue, Washington</p>
+          <a href="/festival-artists/">Explore the festival →</a>
+        </aside>
+      </div>
+    </main>
+    {{template "footer.html" .}}
+  </body>
 </html>

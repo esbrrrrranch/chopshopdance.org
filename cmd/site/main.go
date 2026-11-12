@@ -22,7 +22,9 @@ func main() {
 }
 
 func build(source, partials, output string) error {
-	shared, err := template.ParseGlob(filepath.Join(partials, "*.html"))
+	shared, err := template.New("site").Funcs(template.FuncMap{
+		"breadcrumbs": breadcrumbTrail,
+	}).ParseGlob(filepath.Join(partials, "*.html"))
 	if err != nil {
 		return err
 	}
@@ -96,4 +98,20 @@ func build(source, partials, output string) error {
 		}
 		return nil
 	})
+}
+
+type breadcrumb struct {
+	Label string
+	URL   string
+}
+
+func breadcrumbTrail(parts ...string) ([]breadcrumb, error) {
+	if len(parts)%2 != 0 {
+		return nil, fmt.Errorf("breadcrumbs require label and URL pairs")
+	}
+	trail := []breadcrumb{{Label: "Home", URL: "/"}}
+	for i := 0; i < len(parts); i += 2 {
+		trail = append(trail, breadcrumb{Label: parts[i], URL: parts[i+1]})
+	}
+	return trail, nil
 }

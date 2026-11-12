@@ -1,6 +1,6 @@
 const siteHeader = document.querySelector('.site-header');
 const menuToggle = document.querySelector('.menu-toggle');
-const mobileViewport = window.matchMedia('(max-width: 640px)');
+const mobileViewport = window.matchMedia('(max-width: 899px)');
 
 const setMenuOpen = (open) => {
   siteHeader.dataset.menuOpen = String(open);

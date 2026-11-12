@@ -2,13 +2,12 @@
    Skip to content
   </a>
   <header class="site-header">
-   <button aria-controls="main-navigation" aria-expanded="false" aria-label="Open navigation" class="menu-toggle" type="button">
-    <span aria-hidden="true" class="menu-icon"></span>
-   </button>
    <a class="brand" href="/">
-    <span class="mobile-brand">CHOP SHOP: Bodies of Work</span>
     <img alt="CHOP SHOP: Bodies of Work" height="420" src="/assets/images/chop-shop-logo.png" width="1336"/>
    </a>
+   <button aria-controls="main-navigation" aria-expanded="false" aria-label="Open navigation" class="menu-toggle" type="button">
+    Menu <span aria-hidden="true" class="menu-icon"></span>
+   </button>
    <nav class="site-nav" aria-label="Main navigation" id="main-navigation">
     <a{{if eq .Path "index.html"}} aria-current="page"{{end}} href="/">
      Home
@@ -33,10 +32,13 @@
      </div>
     </details>
     <details class="nav-group">
-     <summary{{if or (eq .Path "apply/index.html") (eq .Path "festival-artists/index.html") (eq .Path "experience-dance-program/index.html")}} class="active"{{end}}>
+     <summary{{if or (eq .Path "tickets/index.html") (eq .Path "master-classes/index.html") (eq .Path "venues-directions/index.html") (eq .Path "apply/index.html") (eq .Path "festival-artists/index.html") (eq .Path "experience-dance-program/index.html")}} class="active"{{end}}>
       The Festival
      </summary>
      <div class="submenu">
+      <a{{if eq .Path "tickets/index.html"}} aria-current="page"{{end}} href="/tickets/">Tickets</a>
+      <a{{if eq .Path "master-classes/index.html"}} aria-current="page"{{end}} href="/master-classes/">Master classes</a>
+      <a{{if eq .Path "venues-directions/index.html"}} aria-current="page"{{end}} href="/venues-directions/">Venues &amp; directions</a>
       <a{{if eq .Path "festival-artists/index.html"}} aria-current="page"{{end}} href="/festival-artists/">
        Festival Artists
       </a>

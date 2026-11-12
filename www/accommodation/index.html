@@ -1,62 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-  <title>
-   Accommodation | CHOP SHOP
-  </title>
-  <meta content="CHOP SHOP has partnered with Red Lion Hotels to offer festival patrons a special discount rate that includes breakfast and parking. To book your room, please fo" name="description"/>
-  <link href="https://www.chopshopdance.org/accommodation/" rel="canonical"/>
-  <link href="/styles.css?v=9" rel="stylesheet"/>
-  <script defer="" src="/assets/site.js?v=2">
-  </script>
- </head>
- <body>
-{{template "header.html" .}}
-  <section class="hero">
-   <img alt="" class="hero-image" fetchpriority="high" src="/assets/images/web-chop-shop-2018-brd-dress-bret-doss-photography-2018-01-260fbd71.webp"/>
-   <h1>
-    Accommodation
-   </h1>
-  </section>
-  <main class="main-content" id="main">
-   <div class="page-layout">
-    <div class="layout-row">
-     <div class="layout-column layout-span-12">
-      <div class="content-block">
-       <div class="text-content">
-        <p>
-         CHOP SHOP has partnered with Red Lion Hotels to offer festival patrons a special discount rate that includes breakfast and parking. To book your room, please
-         <a href="https://www.redlion.com/red-lion-hotels/wa/bellevue/red-lion-hotel-bellevue#room-types" rel="noopener noreferrer" target="_blank">
-          <strong>
-           follow this link
-          </strong>
-         </a>
-         to the Red Lion Hotels booking portal and use the group discount code CHOP0215.
-        </p>
-        <p>
-         Red Lion Hotel Bellevue
-         <br/>
-         11211 Main Street
-         <br/>
-         Bellevue, WA  98004
-         <br/>
-         Phone:  425.455.5240
-         <br/>
-         <a href="https://www.google.com/maps/place/Red+Lion+Hotel+Bellevue/@47.609572,-122.1925146,17z/data=!3m1!4b1!4m5!3m4!1s0x54906c6499238c51:0x2d7567aba225af06!8m2!3d47.609572!4d-122.1903259" rel="noopener noreferrer" target="_blank">
-          View Map
-         </a>
-        </p>
-        <p>
-         The Red Lion Hotel Bellevue is a 10-minute walk or 2-minute drive from Meydenbauer Center Theatre. All rooms are equipped with a refrigerator, microwave, and a coffee/tea maker, and include free WiFi.
-        </p>
-       </div>
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>Accommodation | CHOP SHOP</title>
+    <meta content="CHOP SHOP has partnered with Red Lion Hotels to offer festival patrons a special discount rate that includes breakfast and parking. To book your room, please fo" name="description"/>
+    <link href="https://www.chopshopdance.org/accommodation/" rel="canonical"/>
+    <link href="/styles.css?v=19" rel="stylesheet"/>
+    <script defer="" src="/assets/site.js?v=3"></script>
+  </head>
+  <body>
+    {{template "header.html" .}}
+    <main class="page" id="main">
+      {{template "breadcrumbs.html" (breadcrumbs "Festival" "/festival-artists/" "Where to stay" "")}}
+      <header class="page-heading">
+        <div class="heading-copy">
+          <p class="eyebrow">The 2027 festival</p>
+          <h1>Where to stay.</h1>
+        </div>
+        <figure class="heading-photo"><img alt="" fetchpriority="high" src="/assets/images/web-chop-shop-2018-brd-dress-bret-doss-photography-2018-01-260fbd71.webp"/></figure>
+      </header>
+      <div class="reading-layout">
+        <article class="prose">
+          <p>CHOP SHOP has partnered with Red Lion Hotels to offer festival patrons a special discount rate that includes breakfast and parking. To book your room, please <a href="https://www.redlion.com/red-lion-hotels/wa/bellevue/red-lion-hotel-bellevue#room-types" rel="noopener noreferrer" target="_blank"><strong>follow this link</strong></a> to the Red Lion Hotels booking portal and use the group discount code CHOP0215.</p>
+          <p>Red Lion Hotel Bellevue <br/> 11211 Main Street <br/> Bellevue, WA 98004 <br/> Phone: 425.455.5240 <br/> <a href="https://www.google.com/maps/place/Red+Lion+Hotel+Bellevue/@47.609572,-122.1925146,17z/data=!3m1!4b1!4m5!3m4!1s0x54906c6499238c51:0x2d7567aba225af06!8m2!3d47.609572!4d-122.1903259" rel="noopener noreferrer" target="_blank">View Map</a></p>
+          <p>The Red Lion Hotel Bellevue is a 10-minute walk or 2-minute drive from Meydenbauer Center Theatre. All rooms are equipped with a refrigerator, microwave, and a coffee/tea maker, and include free WiFi.</p>
+        </article>
+        <aside class="page-aside">
+          <p class="eyebrow">Save the date</p>
+          <p class="aside-title">April 23–25, 2027</p>
+          <p>Meydenbauer Center Theatre Bellevue, Washington</p>
+          <a href="/festival-artists/">Explore the festival →</a>
+        </aside>
       </div>
-     </div>
-    </div>
-   </div>
-  </main>
-{{template "footer.html" .}}
- </body>
+    </main>
+    {{template "footer.html" .}}
+  </body>
 </html>
