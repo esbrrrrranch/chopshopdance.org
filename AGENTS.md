@@ -20,7 +20,8 @@
 - Track Go development tools with `tool` directives in `go.mod` and retain `go.sum` so contributors use pinned dependencies without installing tools globally.
 - Keep local development accessible to non-engineers with Go installed. Document a direct Go command wherever Make is used, since Make may not be available.
 - Build the site with directly editable HTML, CSS, and JavaScript, using Go’s standard `html/template` package to share the header and footer. `make build` generates static deployment files in `dist/`; no frontend framework or additional runtime is required. The faithful migration is complete. Redesign around consistent, mobile-first layouts while preserving the migrated content and routes.
-- Link directly to `/styles.css` without cache-busting query parameters to avoid unrelated page changes during styling iterations.
+- Format source HTML with oxfmt, including shared templates and unpublished drafts. Keep Go template conditions inside quoted attribute values so the HTML parser can handle them.
+- Link directly to local assets, including `/styles.css` and `/assets/site.js`, without cache-busting query parameters to avoid unrelated page changes during styling iterations.
 - Keep all site styling in `www/styles.css`, with shared design variables and clearly organized component and responsive sections. Use descriptive site-owned classes instead of Squarespace classes, inline styles, or page-specific stylesheets.
 - Preserve existing page routes, content, image descriptions, and photo credits. Keep the original export outside the deployed `dist/` directory.
 - Use Tufte CSS as the basis for a coherent editorial design, adapted to system sans-serif fonts, 20px mobile body text, readable line lengths, and mobile-first layouts. Keep its MIT attribution in `www/licenses/tufte-css.txt`.

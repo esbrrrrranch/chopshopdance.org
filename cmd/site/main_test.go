@@ -3,6 +3,7 @@ package main
 import (
 	"os"
 	"path/filepath"
+	"regexp"
 	"strings"
 	"testing"
 )
@@ -86,7 +87,7 @@ func TestSiteTemplates(t *testing.T) {
 		if route == "404.html" {
 			expected = 0
 		}
-		if strings.Count(html, `<a aria-current="page"`) != expected {
+		if len(regexp.MustCompile(`<a\b[^>]*\baria-current="page"`).FindAllString(html, -1)) != expected {
 			t.Fatalf("incorrect active navigation: %s", route)
 		}
 	}

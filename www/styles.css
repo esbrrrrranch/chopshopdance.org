@@ -222,7 +222,7 @@ hr {
   padding: 12px 0;
   text-decoration: none;
 }
-.site-nav [aria-current], .nav-group > summary.active {
+.site-nav [aria-current="page"], .nav-group > summary.active {
   text-decoration: underline;
   text-underline-offset: .4em;
 }

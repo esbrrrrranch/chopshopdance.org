@@ -46,6 +46,16 @@ Edit `templates/header.html` or `templates/footer.html` to update shared content
 
 Save a file while `make dev` is running to see the change in your browser. If an older development server is running, stop it and restart with the new command.
 
+## Formatting HTML
+
+To format all source HTML with pnpm installed, run:
+
+```sh
+pnpm dlx oxfmt@0.78.0 --write 'www/**/*.html' 'templates/**/*.html' 'drafts/**/*.html'
+```
+
+Use `--check` instead of `--write` to check formatting. Keep Go template conditions inside quoted attribute values, using Go raw strings for path comparisons, so oxfmt can parse the HTML. Formatting is optional for local development; serving and building still require only Go.
+
 ## Unpublished pages
 
 Tickets, master classes, and venues and directions are saved in `drafts/`, outside the published `www/` tree. They are excluded from both local previews and `dist/`. The historical 2020 master classes page remains public.

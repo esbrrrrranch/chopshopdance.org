@@ -1,54 +1,94 @@
-  <a class="skip-link" href="#main">
-   Skip to content
+<a class="skip-link" href="#main"> Skip to content </a>
+<header class="site-header">
+  <a class="brand" href="/">
+    <img
+      alt="CHOP SHOP: Bodies of Work"
+      height="420"
+      src="/assets/images/chop-shop-logo.png"
+      width="1336"
+    />
   </a>
-  <header class="site-header">
-   <a class="brand" href="/">
-    <img alt="CHOP SHOP: Bodies of Work" height="420" src="/assets/images/chop-shop-logo.png" width="1336"/>
-   </a>
-   <button aria-controls="main-navigation" aria-expanded="false" aria-label="Open navigation" class="menu-toggle" type="button">
+  <button
+    aria-controls="main-navigation"
+    aria-expanded="false"
+    aria-label="Open navigation"
+    class="menu-toggle"
+    type="button"
+  >
     <span aria-hidden="true" class="menu-icon"></span>
-   </button>
-   <nav class="site-nav" aria-label="Main navigation" id="main-navigation">
-    <a{{if eq .Path "index.html"}} aria-current="page"{{end}} href="/">
-     Home
+  </button>
+  <nav class="site-nav" aria-label="Main navigation" id="main-navigation">
+    <a
+      aria-current="{{if eq .Path `index.html`}}page{{else}}false{{end}}"
+      href="/"
+    >
+      Home
     </a>
     <details class="nav-group">
-     <summary{{if or (eq .Path "sponsors-press/index.html") (eq .Path "support/index.html") (eq .Path "history/index.html") (eq .Path "staff/index.html")}} class="active"{{end}}>
-      About Us
-     </summary>
-     <div class="submenu">
-      <a{{if eq .Path "history/index.html"}} aria-current="page"{{end}} href="/history/">
-       The First Fourteen Years
-      </a>
-      <a{{if eq .Path "staff/index.html"}} aria-current="page"{{end}} href="/staff/">
-       Staff
-      </a>
-      <a{{if eq .Path "sponsors-press/index.html"}} aria-current="page"{{end}} href="/sponsors-press/">
-       Sponsors + Press
-      </a>
-      <a{{if eq .Path "support/index.html"}} aria-current="page"{{end}} href="/support/">
-       Support
-      </a>
-     </div>
+      <summary
+        class="{{if or (eq .Path `sponsors-press/index.html`) (eq .Path `support/index.html`) (eq .Path `history/index.html`) (eq .Path `staff/index.html`)}}active{{end}}"
+      >
+        About Us
+      </summary>
+      <div class="submenu">
+        <a
+          aria-current="{{if eq .Path `history/index.html`}}page{{else}}false{{end}}"
+          href="/history/"
+        >
+          The First Fourteen Years
+        </a>
+        <a
+          aria-current="{{if eq .Path `staff/index.html`}}page{{else}}false{{end}}"
+          href="/staff/"
+        >
+          Staff
+        </a>
+        <a
+          aria-current="{{if eq .Path `sponsors-press/index.html`}}page{{else}}false{{end}}"
+          href="/sponsors-press/"
+        >
+          Sponsors + Press
+        </a>
+        <a
+          aria-current="{{if eq .Path `support/index.html`}}page{{else}}false{{end}}"
+          href="/support/"
+        >
+          Support
+        </a>
+      </div>
     </details>
     <details class="nav-group">
-     <summary{{if or (eq .Path "apply/index.html") (eq .Path "festival-artists/index.html") (eq .Path "experience-dance-program/index.html")}} class="active"{{end}}>
-      The Festival
-     </summary>
-     <div class="submenu">
-      <a{{if eq .Path "festival-artists/index.html"}} aria-current="page"{{end}} href="/festival-artists/">
-       Festival Artists
-      </a>
-      <a{{if eq .Path "experience-dance-program/index.html"}} aria-current="page"{{end}} href="/experience-dance-program/">
-       Experience Dance Program
-      </a>
-      <a{{if eq .Path "apply/index.html"}} aria-current="page"{{end}} href="/apply/">
-       Apply
-      </a>
-     </div>
+      <summary
+        class="{{if or (eq .Path `apply/index.html`) (eq .Path `festival-artists/index.html`) (eq .Path `experience-dance-program/index.html`)}}active{{end}}"
+      >
+        The Festival
+      </summary>
+      <div class="submenu">
+        <a
+          aria-current="{{if eq .Path `festival-artists/index.html`}}page{{else}}false{{end}}"
+          href="/festival-artists/"
+        >
+          Festival Artists
+        </a>
+        <a
+          aria-current="{{if eq .Path `experience-dance-program/index.html`}}page{{else}}false{{end}}"
+          href="/experience-dance-program/"
+        >
+          Experience Dance Program
+        </a>
+        <a
+          aria-current="{{if eq .Path `apply/index.html`}}page{{else}}false{{end}}"
+          href="/apply/"
+        >
+          Apply
+        </a>
+      </div>
     </details>
-    <a{{if eq .Path "contact/index.html"}} aria-current="page"{{end}} href="/contact/">
-     Contact
+    <a
+      aria-current="{{if eq .Path `contact/index.html`}}page{{else}}false{{end}}"
+      href="/contact/"
+    >
+      Contact
     </a>
-   </nav>
-  </header>
+  </nav>
+</header>
