@@ -1,3 +1,4 @@
 {
-  "ignorePatterns": ["dist/**", "export/**", "node_modules/**"]
+  "ignorePatterns": ["dist/**", "export/**", "node_modules/**"],
+  "printWidth": 80
 }
