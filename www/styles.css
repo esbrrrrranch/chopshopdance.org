@@ -760,16 +760,12 @@ blockquote {
     box-shadow: 0 12px 24px #19191910;
   }
   .page-heading, .home-heading {
-    grid-template-columns: 1.1fr 1fr;
     gap: 56px;
     padding: 56px 0;
     margin-bottom: 24px;
   }
   .page-heading {
     align-items: start;
-  }
-  .home-heading {
-    grid-template-columns: 1.2fr 1fr;
   }
   .home-photo img {
     min-height: 460px;

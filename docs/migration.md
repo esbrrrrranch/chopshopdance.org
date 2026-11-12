@@ -23,7 +23,7 @@ The first pass was prepared on November 7, 2026. The WordPress XML export suppli
 - The shared header uses Michael’s revised `www/assets/images/chop-shop-logo.png`, supplied on November 11, 2026. Its original proportions are preserved, with a compact image masthead on mobile and a 288px display width on desktop.
 - The 2027 application PDF is stored in `www/s/`. The asset source URLs are recorded in `export/asset-manifest.json`.
 - Fifteen YouTube embeds remain externally hosted and use HTTPS with the privacy-enhanced embed domain. Playback and availability depend on YouTube; every historical video has not been watched or independently verified.
-- The application button retains the existing Google Forms destination. Donations link to the Inlet Arts Zeffy donation form. No submissions or transactions were made during migration.
+- Applications for the 2027 festival closed September 15, 2026, as confirmed by Michael. Application buttons have been removed; the Apply page and reference PDF remain available. Donations link to the Inlet Arts Zeffy donation form. No submissions or transactions were made during migration.
 - The contact form prepares an email draft rather than submitting to Squarespace. It requires a configured email app and clearly states that the visitor must send the draft.
 - Newsletter signup uses a labeled email link temporarily. The original signup markup reports that no storage destination is configured. A mailing-list provider must be chosen before restoring online signup.
 - Typography uses system sans-serif fonts throughout, as requested for the redesign. No remote fonts are loaded.
