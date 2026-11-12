@@ -38,7 +38,7 @@ Start with the variables at the top of `styles.css` to change shared colors, fon
 
 Use normal headings, paragraphs, lists, and figures inside an `article.prose`. A `reading-layout` pairs the article with a `page-aside` for navigation or festival information. Long pages use native `details` for an expandable table of contents, placed before the article on mobile. Staff and artist pages use `section.profile` with a photograph and `profile-body`; festival history uses `section.archive-entry` with `archive-year` and `archive-body`.
 
-The layout starts with one column, 20px body text, and a compact menu. At 900px it expands to adjacent content, a margin column where useful, and 22px body text. Keep body copy within `--measure`, and use the shared `photo`, `video`, `button`, and `newsletter` components. Avoid spacer elements, inline styles, and nested presentation wrappers.
+The layout starts with one column, 20px body text, and a compact menu. At 900px it expands to adjacent content, a margin column where useful, and 22px body text. Keep body copy within `--measure`, and use the shared `photo`, `video`, `button`, and `newsletter` components. Use `section.content-section` for major article sections, with semantic subheadings for courses and venues. `metadata` styles dates, `detail-label` and `detail` distinguish supporting information, and `venue-address` groups addresses and map links. Keep these hierarchy styles shared rather than applying one-off font sizes. Avoid spacer elements, inline styles, and nested presentation wrappers.
 
 The stylesheet adapts [Tufte CSS](https://github.com/edwardtufte/tufte-css) rather than loading a second CSS file or its serif fonts. Its license is included at `www/licenses/tufte-css.txt`.
 
@@ -62,3 +62,5 @@ The Go standard library renders the HTML templates and copies assets into `dist/
 2. Choose contact and newsletter services.
 3. Review dated content and external links.
 4. Configure GitHub Pages to deploy only `dist/` at the custom domain root.
+
+The shared palette is gray, black, and white. Text links are black, with light text on dark navigation and action backgrounds.

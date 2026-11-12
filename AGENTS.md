@@ -23,6 +23,7 @@
 - Keep all site styling in `www/styles.css`, with shared design variables and clearly organized component and responsive sections. Use descriptive site-owned classes instead of Squarespace classes, inline styles, or page-specific stylesheets.
 - Preserve existing page routes, content, image descriptions, and photo credits. Keep the original export outside the deployed `dist/` directory.
 - Use Tufte CSS as the basis for a coherent editorial design, adapted to system sans-serif fonts, 20px mobile body text, readable line lengths, and mobile-first layouts. Keep its MIT attribution in `www/licenses/tufte-css.txt`.
+- Keep the palette neutral gray, black, and white. Text links are full black, with light text for navigation and actions on dark backgrounds.
 - End each page’s main heading with a period.
 - Use simple semantic HTML with shared article, profile, and archive layouts. The image logo appears at every size; navigation collapses below 900px. Review mobile and desktop rendering rather than reproducing the original Squarespace styling.
 - Keep migration coverage, intentional differences, and launch questions current in `docs/migration.md`. Record downloaded asset sources in `export/asset-manifest.json`.
