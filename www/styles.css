@@ -400,14 +400,6 @@ hr {
   font-size: 1rem;
   line-height: 1.7;
 }
-.course .button {
-  color: #000;
-  background: transparent;
-}
-.course .button:hover {
-  color: var(--paper);
-  background: var(--accent);
-}
 .prose .photo {
   margin: 2rem 0;
 }
@@ -601,9 +593,9 @@ blockquote {
   max-width: 100%;
   min-height: 48px;
   padding: 12px 22px;
-  border: 1px solid var(--ink);
+  border: 1px solid #000;
   border-radius: 0;
-  background: var(--ink);
+  background: #000;
   color: var(--paper);
   font-size: 1rem;
   font-weight: 500;
@@ -611,10 +603,31 @@ blockquote {
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+  overflow: hidden;
+}
+.button-label {
+  display: inline-block;
+  transition: transform 300ms ease-in-out;
+}
+.button:focus-visible .button-label {
+  transform: scale(1.55);
+}
+@media (hover: hover) and (pointer: fine) {
+  .button:hover .button-label {
+    transform: scale(1.55);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .button-label {
+    transition: none;
+  }
+  .button:hover .button-label, .button:focus-visible .button-label {
+    transform: none;
+  }
 }
 .button:hover {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: #000;
+  border-color: #000;
   color: var(--paper);
 }
 .contact label {
