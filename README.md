@@ -10,7 +10,7 @@ The original Squarespace content is stored in `export/Squarespace-Wordpress-Expo
 
 Editable site sources live in `www/`, shared HTML lives in `templates/`, and generated output goes to `dist/`. The first static migration preserves 20 content pages, local images and the application PDF, archive videos, and shared navigation. The current design adapts Tufte CSS to a mobile-first layout with system sans-serif typography. A GitHub Pages deployment workflow is included; repository Pages settings and DNS still need to be configured.
 
-See [migration notes](docs/migration.md) for page coverage, verification, and remaining decisions.
+See [migration notes](docs/migration.md) for page coverage, verification, and remaining decisions, and [the decision log](PROJECT.md) for historical context.
 
 ## Local development
 

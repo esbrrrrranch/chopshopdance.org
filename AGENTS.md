@@ -4,7 +4,7 @@
 
 - Read the project notes below before starting work.
 - Keep these notes current as project decisions and overall direction evolve.
-- Record significant decisions, their brief rationale, and unresolved questions that affect future work.
+- Record significant decisions and their brief rationale in the dated `PROJECT.md` log. Preserve historical entries and mark superseded decisions. Keep unresolved questions and current migration status in `docs/migration.md`.
 - Distinguish agreed decisions from proposals and open questions.
 - Update existing notes when decisions change, and remove obsolete guidance.
 - Keep notes concise and focused on durable context rather than a log of routine tasks.
