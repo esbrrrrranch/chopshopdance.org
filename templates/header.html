@@ -32,13 +32,10 @@
      </div>
     </details>
     <details class="nav-group">
-     <summary{{if or (eq .Path "tickets/index.html") (eq .Path "master-classes/index.html") (eq .Path "venues-directions/index.html") (eq .Path "apply/index.html") (eq .Path "festival-artists/index.html") (eq .Path "experience-dance-program/index.html")}} class="active"{{end}}>
+     <summary{{if or (eq .Path "apply/index.html") (eq .Path "festival-artists/index.html") (eq .Path "experience-dance-program/index.html")}} class="active"{{end}}>
       The Festival
      </summary>
      <div class="submenu">
-      <a{{if eq .Path "tickets/index.html"}} aria-current="page"{{end}} href="/tickets/">Tickets</a>
-      <a{{if eq .Path "master-classes/index.html"}} aria-current="page"{{end}} href="/master-classes/">Master classes</a>
-      <a{{if eq .Path "venues-directions/index.html"}} aria-current="page"{{end}} href="/venues-directions/">Venues &amp; directions</a>
       <a{{if eq .Path "festival-artists/index.html"}} aria-current="page"{{end}} href="/festival-artists/">
        Festival Artists
       </a>

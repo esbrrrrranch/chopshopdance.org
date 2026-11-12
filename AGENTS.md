@@ -25,12 +25,15 @@
 - Preserve existing page routes, content, image descriptions, and photo credits. Keep the original export outside the deployed `dist/` directory.
 - Use Tufte CSS as the basis for a coherent editorial design, adapted to system sans-serif fonts, 20px mobile body text, readable line lengths, and mobile-first layouts. Keep its MIT attribution in `www/licenses/tufte-css.txt`.
 - Keep the palette neutral gray, black, and white. Text links are full black, with light text for navigation and actions on dark backgrounds.
+- Do not transform or offset the header logo. Preserve its natural placement and the agreed `4px 0 6px` container padding.
 - End each page’s main heading with a period.
 - Keep page-heading and homepage photographs full width below their titles at every viewport size.
 - Use simple semantic HTML with shared article, profile, and archive layouts. The image logo appears at every size; navigation collapses below 900px. Review mobile and desktop rendering rather than reproducing the original Squarespace styling.
 - Keep migration coverage, intentional differences, and launch questions current in `docs/migration.md`. Record downloaded asset sources in `export/asset-manifest.json`.
 - Use clearly labeled email fallbacks until replacement contact and newsletter services are selected. Do not imply that an email draft or signup request has been submitted.
 - Include the dance-film archive as public content. Michael removed its password and authorized migration of the page and any linked CHOP SHOP pages.
+
+- Keep tickets, master classes, and venues and directions unpublished in `drafts/` until approved for release. Only `www/` is built; preserve draft content and remove public links to draft routes. Historical master classes remain public.
 
 ### Open questions
 

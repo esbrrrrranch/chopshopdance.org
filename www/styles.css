@@ -167,7 +167,7 @@ hr {
   align-self: flex-end;
   flex: 0 1 calc(100% - 64px);
   min-width: 0;
-  padding-top: 4px;
+  padding: 4px 0 6px;
   overflow: hidden;
   line-height: 0;
 }
@@ -175,7 +175,6 @@ hr {
   width: 100%;
   max-width: calc(120px * 1240 / 317);
   max-height: 120px;
-  transform: translateY(1px);
 }
 .menu-toggle {
   display: none;
@@ -312,7 +311,6 @@ hr {
 }
 .home-photo img {
   width: 100%;
-  aspect-ratio: 4 / 5;
   object-fit: cover;
 }
 .home-heading h1 {

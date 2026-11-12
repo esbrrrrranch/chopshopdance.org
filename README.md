@@ -8,7 +8,7 @@ The original Squarespace content is stored in `export/Squarespace-Wordpress-Expo
 
 ## Project status
 
-Editable site sources live in `www/`, shared HTML lives in `templates/`, and generated output goes to `dist/`. The first static migration includes 20 public pages, local images and the application PDF, archive videos, and shared navigation. The current design adapts Tufte CSS to a mobile-first layout with system sans-serif typography. GitHub Pages deployment is not configured yet.
+Editable site sources live in `www/`, shared HTML lives in `templates/`, and generated output goes to `dist/`. The first static migration preserves 20 content pages, local images and the application PDF, archive videos, and shared navigation. The current design adapts Tufte CSS to a mobile-first layout with system sans-serif typography. GitHub Pages deployment is not configured yet.
 
 See [migration notes](docs/migration.md) for page coverage, verification, and remaining decisions.
 
@@ -45,6 +45,12 @@ The stylesheet adapts [Tufte CSS](https://github.com/edwardtufte/tufte-css) rath
 Edit `templates/header.html` or `templates/footer.html` to update shared content once. Pages include these files with `{{template "header.html" .}}` and `{{template "footer.html" .}}`. The header uses `.Path` to highlight the current page automatically. Interior pages call `breadcrumbs.html` with label/URL pairs, for example `{{template "breadcrumbs.html" (breadcrumbs "Festival" "/festival-artists/" "Master Classes" "")}}`. Home is included automatically; an empty URL marks the current page. Redirect pages remain standalone HTML.
 
 Save a file while `make dev` is running to see the change in your browser. If an older development server is running, stop it and restart with the new command.
+
+## Unpublished pages
+
+Tickets, master classes, and venues and directions are saved in `drafts/`, outside the published `www/` tree. They are excluded from both local previews and `dist/`. The historical 2020 master classes page remains public.
+
+To restore a page, move its directory from `drafts/` back to `www/`, review its dated content, and restore its link in `templates/header.html`. When restoring master classes, also restore the Master Classes parent breadcrumb on the scholarships page. Rebuild with `make build` or `go run ./cmd/site build`.
 
 ## Building for deployment
 
