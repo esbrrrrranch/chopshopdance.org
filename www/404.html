@@ -13,9 +13,10 @@
     <meta content="noindex" name="robots" />
   </head>
   <body>
-    {{template "header.html" .}}
+    {% include "header.html" %}
     <main class="page" id="main">
-      {{template "breadcrumbs.html" (breadcrumbs "Page not found" "")}}
+      {% set breadcrumbs = [{"label": "Home", "url": "/"}, {"label": "Page not
+      found", "url": ""}] %} {% include "breadcrumbs.html" %}
       <header class="page-heading">
         <div class="heading-copy">
           <p class="eyebrow">CHOP SHOP</p>
@@ -41,6 +42,6 @@
         </aside>
       </div>
     </main>
-    {{template "footer.html" .}}
+    {% include "footer.html" %}
   </body>
 </html>

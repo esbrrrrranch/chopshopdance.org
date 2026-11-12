@@ -13,10 +13,11 @@
     <link href="https://www.chopshopdance.org/dance-films/" rel="canonical" />
   </head>
   <body>
-    {{template "header.html" .}}
+    {% include "header.html" %}
     <main class="page" id="main">
-      {{template "breadcrumbs.html" (breadcrumbs "Festival history" "/history/"
-      "CHOP SHOP 2021 Dance Films" "")}}
+      {% set breadcrumbs = [{"label": "Home", "url": "/"}, {"label": "Festival
+      history", "url": "/history/"}, {"label": "CHOP SHOP 2021 Dance Films",
+      "url": ""}] %} {% include "breadcrumbs.html" %}
       <header class="page-heading">
         <div class="heading-copy">
           <p class="eyebrow">From the archive</p>
@@ -356,6 +357,6 @@
         </article>
       </div>
     </main>
-    {{template "footer.html" .}}
+    {% include "footer.html" %}
   </body>
 </html>

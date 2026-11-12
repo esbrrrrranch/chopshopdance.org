@@ -13,10 +13,10 @@
     <script defer="" src="/assets/site.js"></script>
   </head>
   <body>
-    {{template "header.html" .}}
+    {% include "header.html" %}
     <main class="page" id="main">
-      {{template "breadcrumbs.html" (breadcrumbs "The First Fourteen Years"
-      "")}}
+      {% set breadcrumbs = [{"label": "Home", "url": "/"}, {"label": "The First
+      Fourteen Years", "url": ""}] %} {% include "breadcrumbs.html" %}
       <header class="page-heading">
         <div class="heading-copy">
           <p class="eyebrow">From the archive</p>
@@ -1427,6 +1427,6 @@
         </section>
       </div>
     </main>
-    {{template "footer.html" .}}
+    {% include "footer.html" %}
   </body>
 </html>

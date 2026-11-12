@@ -2,7 +2,7 @@
 
 ## Direction
 
-The faithful Squarespace migration is complete. Michael has requested a coherent, mobile-first redesign using Tufte CSS as a base with system sans-serif typography. The site consists of directly editable HTML in `www/`, shared CSS, and a small navigation and contact script. A small Go generator renders shared header and footer templates from `templates/` and copies assets into `dist/`. `make build` creates deployment output; `make dev` uses the pinned `modd` tool and `modd.conf` to rebuild changed sources, while `devd` serves and reloads the output.
+The faithful Squarespace migration is complete. Michael has requested a coherent, mobile-first redesign using Tufte CSS as a base with system sans-serif typography. The site consists of directly editable HTML in `www/`, shared CSS, and a small navigation and contact script. Eleventy renders Nunjucks templates from `templates/` and copies assets into `dist/`. `pnpm build` creates deployment output; `pnpm dev` watches sources and serves with browser reload. Dependencies are pinned with pnpm, and `pnpm format` formats JavaScript, HTML, and CSS with oxfmt. Go and Make are no longer required.
 
 The first pass was prepared on November 7, 2026. The WordPress XML export supplied the page inventory and image descriptions. The live pages supplied the full text, layout, banners, quotes, buttons, and video embeds that the export omits. All 140 live text blocks were checked against the migrated pages.
 
@@ -35,7 +35,7 @@ The first pass was prepared on November 7, 2026. The WordPress XML export suppli
 2. Choose a newsletter provider and decide whether contact should use a hosted form or keep email.
 3. The dance-film archive is public. Its live source contains descriptions and credits but no film players; preserve that scope unless film access is explicitly added later.
 4. Review dated content. The application deadline in the copied text is November 5, 2026; older tickets and classes pages also retain their original dates and external links.
-5. Configure GitHub Pages to deploy only `dist/` at the domain root. Root-relative links assume the custom domain or an account-level Pages site, not a repository subpath. The XML export and migration notes must remain outside the deployed directory.
+5. Enable GitHub Actions as the repository’s Pages source. `.github/workflows/deploy.yml` checks and deploys only `dist/` from the default branch, including the custom `404.html`. Root-relative links assume the custom domain or an account-level Pages site, not a repository subpath. The XML export and migration notes must remain outside the deployed directory.
 6. Confirm external archive links and video availability before launch. Deployment and DNS changes have not been made.
 
 ## Verification

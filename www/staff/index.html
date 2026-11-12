@@ -13,9 +13,10 @@
     <script defer="" src="/assets/site.js"></script>
   </head>
   <body>
-    {{template "header.html" .}}
+    {% include "header.html" %}
     <main class="page" id="main">
-      {{template "breadcrumbs.html" (breadcrumbs "Staff" "")}}
+      {% set breadcrumbs = [{"label": "Home", "url": "/"}, {"label": "Staff",
+      "url": ""}] %} {% include "breadcrumbs.html" %}
       <header class="page-heading">
         <div class="heading-copy">
           <p class="eyebrow">About CHOP SHOP</p>
@@ -109,6 +110,6 @@
         </section>
       </div>
     </main>
-    {{template "footer.html" .}}
+    {% include "footer.html" %}
   </body>
 </html>

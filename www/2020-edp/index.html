@@ -13,10 +13,11 @@
     <script defer="" src="/assets/site.js"></script>
   </head>
   <body>
-    {{template "header.html" .}}
+    {% include "header.html" %}
     <main class="page" id="main">
-      {{template "breadcrumbs.html" (breadcrumbs "Festival history" "/history/"
-      "2020 Experience Dance Program" "")}}
+      {% set breadcrumbs = [{"label": "Home", "url": "/"}, {"label": "Festival
+      history", "url": "/history/"}, {"label": "2020 Experience Dance Program",
+      "url": ""}] %} {% include "breadcrumbs.html" %}
       <header class="page-heading">
         <div class="heading-copy">
           <p class="eyebrow">From the archive</p>
@@ -137,6 +138,6 @@
         </aside>
       </div>
     </main>
-    {{template "footer.html" .}}
+    {% include "footer.html" %}
   </body>
 </html>

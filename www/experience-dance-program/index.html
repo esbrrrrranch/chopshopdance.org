@@ -16,10 +16,11 @@
     <script defer="" src="/assets/site.js"></script>
   </head>
   <body>
-    {{template "header.html" .}}
+    {% include "header.html" %}
     <main class="page" id="main">
-      {{template "breadcrumbs.html" (breadcrumbs "Festival" "/festival-artists/"
-      "Experience Dance Program" "")}}
+      {% set breadcrumbs = [{"label": "Home", "url": "/"}, {"label": "Festival",
+      "url": "/festival-artists/"}, {"label": "Experience Dance Program", "url":
+      ""}] %} {% include "breadcrumbs.html" %}
       <header class="page-heading">
         <div class="heading-copy">
           <p class="eyebrow">The 2027 festival</p>
@@ -76,7 +77,7 @@
               Arts' work — in community centers, libraries, and schools across
               the Eastside.</strong
             >
-            <a href="https://inlet-arts.org/#programs"
+            <a href="https://inlet-arts.org/programs"
               ><strong>See the full program at Inlet Arts →</strong></a
             >
           </p>
@@ -89,6 +90,6 @@
         </aside>
       </div>
     </main>
-    {{template "footer.html" .}}
+    {% include "footer.html" %}
   </body>
 </html>

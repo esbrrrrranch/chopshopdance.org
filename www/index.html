@@ -13,7 +13,7 @@
     <script defer="" src="/assets/site.js"></script>
   </head>
   <body class="home">
-    {{template "header.html" .}}
+    {% include "header.html" %}
     <main class="page" id="main">
       <header class="home-heading">
         <div class="heading-copy">
@@ -154,6 +154,6 @@
         </p>
       </section>
     </main>
-    {{template "footer.html" .}}
+    {% include "footer.html" %}
   </body>
 </html>

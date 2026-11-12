@@ -19,38 +19,38 @@
   </button>
   <nav class="site-nav" aria-label="Main navigation" id="main-navigation">
     <a
-      aria-current="{{if eq .Path `index.html`}}page{{else}}false{{end}}"
+      aria-current="{% if page.url == '/' %}page{% else %}false{% endif %}"
       href="/"
     >
       Home
     </a>
     <details class="nav-group">
       <summary
-        class="{{if or (eq .Path `sponsors-press/index.html`) (eq .Path `support/index.html`) (eq .Path `history/index.html`) (eq .Path `staff/index.html`)}}active{{end}}"
+        class="{% if page.url == '/sponsors-press/' or page.url == '/support/' or page.url == '/history/' or page.url == '/staff/' %}active{% endif %}"
       >
         About Us
       </summary>
       <div class="submenu">
         <a
-          aria-current="{{if eq .Path `history/index.html`}}page{{else}}false{{end}}"
+          aria-current="{% if page.url == '/history/' %}page{% else %}false{% endif %}"
           href="/history/"
         >
           The First Fourteen Years
         </a>
         <a
-          aria-current="{{if eq .Path `staff/index.html`}}page{{else}}false{{end}}"
+          aria-current="{% if page.url == '/staff/' %}page{% else %}false{% endif %}"
           href="/staff/"
         >
           Staff
         </a>
         <a
-          aria-current="{{if eq .Path `sponsors-press/index.html`}}page{{else}}false{{end}}"
+          aria-current="{% if page.url == '/sponsors-press/' %}page{% else %}false{% endif %}"
           href="/sponsors-press/"
         >
           Sponsors + Press
         </a>
         <a
-          aria-current="{{if eq .Path `support/index.html`}}page{{else}}false{{end}}"
+          aria-current="{% if page.url == '/support/' %}page{% else %}false{% endif %}"
           href="/support/"
         >
           Support
@@ -59,25 +59,25 @@
     </details>
     <details class="nav-group">
       <summary
-        class="{{if or (eq .Path `apply/index.html`) (eq .Path `festival-artists/index.html`) (eq .Path `experience-dance-program/index.html`)}}active{{end}}"
+        class="{% if page.url == '/apply/' or page.url == '/festival-artists/' or page.url == '/experience-dance-program/' %}active{% endif %}"
       >
         The Festival
       </summary>
       <div class="submenu">
         <a
-          aria-current="{{if eq .Path `festival-artists/index.html`}}page{{else}}false{{end}}"
+          aria-current="{% if page.url == '/festival-artists/' %}page{% else %}false{% endif %}"
           href="/festival-artists/"
         >
           Festival Artists
         </a>
         <a
-          aria-current="{{if eq .Path `experience-dance-program/index.html`}}page{{else}}false{{end}}"
+          aria-current="{% if page.url == '/experience-dance-program/' %}page{% else %}false{% endif %}"
           href="/experience-dance-program/"
         >
           Experience Dance Program
         </a>
         <a
-          aria-current="{{if eq .Path `apply/index.html`}}page{{else}}false{{end}}"
+          aria-current="{% if page.url == '/apply/' %}page{% else %}false{% endif %}"
           href="/apply/"
         >
           Apply
@@ -85,7 +85,7 @@
       </div>
     </details>
     <a
-      aria-current="{{if eq .Path `contact/index.html`}}page{{else}}false{{end}}"
+      aria-current="{% if page.url == '/contact/' %}page{% else %}false{% endif %}"
       href="/contact/"
     >
       Contact

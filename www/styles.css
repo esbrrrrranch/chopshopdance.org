@@ -14,7 +14,8 @@
   --site-width: 1280px;
   --gutter: clamp(20px, 4vw, 64px);
   color-scheme: light;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   color: var(--ink);
   background: var(--paper);
   font-synthesis: none;
@@ -42,9 +43,10 @@ figure {
   padding: 0;
   border: 0;
 }
-figcaption, .fine-print {
+figcaption,
+.fine-print {
   color: var(--muted);
-  font-size: .8rem;
+  font-size: 0.8rem;
   line-height: 1.5;
 }
 figcaption {
@@ -53,19 +55,25 @@ figcaption {
 figcaption p:last-child {
   margin-bottom: 0;
 }
-p, ul, ol, dl {
+p,
+ul,
+ol,
+dl {
   margin: 0 0 1.4rem;
 }
-ul, ol {
+ul,
+ol {
   padding-left: 1.3em;
 }
 li + li {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 strong {
   font-weight: 650;
 }
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: 500;
   line-height: 1.12;
   text-wrap: balance;
@@ -75,30 +83,33 @@ h1 {
   hyphens: auto;
   margin: 0;
   font-size: clamp(2.8rem, 6.5vw, 5.6rem);
-  letter-spacing: -.055em;
+  letter-spacing: -0.055em;
 }
 h2 {
   margin: 2.1rem 0 1.4rem;
   font-size: clamp(1.65rem, 3vw, 2.35rem);
-  letter-spacing: -.035em;
+  letter-spacing: -0.035em;
 }
 h3 {
   margin: 2rem 0 1rem;
   font-size: 1.4rem;
-  letter-spacing: -.02em;
+  letter-spacing: -0.02em;
 }
 a {
   color: #000;
-  text-underline-offset: .18em;
-  text-decoration-thickness: .06em;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 0.06em;
 }
 a:hover {
   color: #000;
 }
-button, input, textarea {
+button,
+input,
+textarea {
   font: inherit;
 }
-button, summary {
+button,
+summary {
   cursor: pointer;
 }
 :focus-visible {
@@ -117,15 +128,15 @@ hr {
 .eyebrow {
   margin-bottom: 1rem;
   color: var(--accent);
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-weight: 650;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 .lead {
   font-size: clamp(1.3rem, 2.5vw, 1.85rem);
   line-height: 1.45;
-  letter-spacing: -.025em;
+  letter-spacing: -0.025em;
 }
 .lead strong {
   font-weight: 500;
@@ -155,7 +166,8 @@ hr {
   gap: 16px;
   min-height: 88px;
   margin: auto;
-  padding: 0 max(var(--gutter), calc((100% - var(--site-width)) / 2 + var(--gutter)));
+  padding: 0
+    max(var(--gutter), calc((100% - var(--site-width)) / 2 + var(--gutter)));
   background: #000;
   color: var(--ink);
 }
@@ -217,14 +229,16 @@ hr {
 .site-header[data-menu-open="false"] .site-nav {
   display: none;
 }
-.site-nav a, .nav-group > summary {
+.site-nav a,
+.nav-group > summary {
   display: block;
   padding: 12px 0;
   text-decoration: none;
 }
-.site-nav [aria-current="page"], .nav-group > summary.active {
+.site-nav [aria-current="page"],
+.nav-group > summary.active {
   text-decoration: underline;
-  text-underline-offset: .4em;
+  text-underline-offset: 0.4em;
 }
 .nav-group > summary {
   list-style: none;
@@ -253,7 +267,7 @@ hr {
 .breadcrumbs {
   padding-top: 24px;
   color: var(--muted);
-  font-size: .8rem;
+  font-size: 0.8rem;
   line-height: 1.5;
 }
 .breadcrumbs ol {
@@ -276,7 +290,8 @@ hr {
   content: "/";
   color: var(--muted);
 }
-.breadcrumbs a, .breadcrumbs span {
+.breadcrumbs a,
+.breadcrumbs span {
   padding-block: 8px;
   overflow-wrap: anywhere;
 }
@@ -290,7 +305,8 @@ hr {
   margin: auto;
   padding: 0 var(--gutter) 64px;
 }
-.page-heading, .home-heading {
+.page-heading,
+.home-heading {
   display: grid;
   gap: 32px;
   padding: 40px 0;
@@ -337,13 +353,16 @@ hr {
   min-width: 0;
   max-width: var(--measure);
 }
-.prose > :first-child, .profile-body > :first-child {
+.prose > :first-child,
+.profile-body > :first-child {
   margin-top: 0;
 }
 .prose > :last-child {
   margin-bottom: 0;
 }
-.prose p, .profile-body p, .collection > p {
+.prose p,
+.profile-body p,
+.collection > p {
   overflow-wrap: break-word;
 }
 .prose h2 {
@@ -371,34 +390,39 @@ hr {
 .content-section > h2 {
   margin: 0 0 1.2rem;
 }
-.content-section > :last-child, .course > :last-child, .venue > :last-child {
+.content-section > :last-child,
+.course > :last-child,
+.venue > :last-child {
   margin-bottom: 0;
 }
-.course, .venue {
+.course,
+.venue {
   margin-top: 2.4rem;
 }
-.course + .course, .venue + .venue {
+.course + .course,
+.venue + .venue {
   padding-top: 2rem;
   border-top: 1px solid var(--rule);
 }
-.course > h3, .venue > h3 {
-  margin: 0 0 .8rem;
+.course > h3,
+.venue > h3 {
+  margin: 0 0 0.8rem;
   font-size: clamp(1.2rem, 2.2vw, 1.5rem);
   font-weight: 600;
   line-height: 1.3;
 }
 .metadata {
   color: var(--muted);
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 1.6;
 }
 .detail-label {
-  margin: 1.8rem 0 .6rem;
+  margin: 1.8rem 0 0.6rem;
   color: var(--accent);
-  font-size: .85rem;
+  font-size: 0.85rem;
   font-weight: 650;
   line-height: 1.4;
-  letter-spacing: .035em;
+  letter-spacing: 0.035em;
 }
 .detail {
   color: #454545;
@@ -421,13 +445,13 @@ hr {
   object-position: left;
 }
 .prose .button {
-  margin: .5rem 0 1.5rem;
+  margin: 0.5rem 0 1.5rem;
 }
 .page-aside {
   border-top: 1px solid var(--rule);
   padding-top: 24px;
   color: var(--muted);
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 1.5;
 }
 .page-aside .eyebrow {
@@ -456,7 +480,9 @@ hr {
 .collection {
   padding-top: 32px;
 }
-.collection > p, .collection > h2, .collection > ul {
+.collection > p,
+.collection > h2,
+.collection > ul {
   max-width: var(--measure);
 }
 .profile {
@@ -480,7 +506,7 @@ hr {
 }
 .profile-body .photo-caption {
   color: var(--muted);
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 .archive-entry {
   display: grid;
@@ -491,10 +517,10 @@ hr {
 .archive-year h2 {
   margin: 0 0 20px;
   font-size: 3rem;
-  letter-spacing: -.05em;
+  letter-spacing: -0.05em;
 }
 .archive-links {
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 2;
 }
 .archive-body {
@@ -537,7 +563,7 @@ blockquote {
   font-size: clamp(1.8rem, 3.5vw, 3rem);
   font-weight: 400;
   line-height: 1.25;
-  letter-spacing: -.035em;
+  letter-spacing: -0.035em;
 }
 .statistics {
   display: grid;
@@ -555,7 +581,7 @@ blockquote {
   color: var(--ink);
   font-size: clamp(2.8rem, 5vw, 4.5rem);
   line-height: 1.15;
-  letter-spacing: -.05em;
+  letter-spacing: -0.05em;
 }
 .explore {
   display: grid;
@@ -633,7 +659,8 @@ blockquote {
   .button-label {
     transition: none;
   }
-  .button:hover .button-label, .button:focus-visible .button-label {
+  .button:hover .button-label,
+  .button:focus-visible .button-label {
     transform: none;
   }
 }
@@ -647,7 +674,8 @@ blockquote {
   margin-bottom: 24px;
   font-size: 1rem;
 }
-.contact input, .contact textarea {
+.contact input,
+.contact textarea {
   display: block;
   width: 100%;
   margin-top: 8px;
@@ -735,7 +763,8 @@ blockquote {
   .site-header[data-menu-open] .menu-toggle {
     display: none;
   }
-  .site-nav, .site-header[data-menu-open="false"] .site-nav {
+  .site-nav,
+  .site-header[data-menu-open="false"] .site-nav {
     display: flex;
     order: 0;
     flex-basis: auto;
@@ -757,7 +786,8 @@ blockquote {
     border: 1px solid var(--rule);
     box-shadow: 0 12px 24px #19191910;
   }
-  .page-heading, .home-heading {
+  .page-heading,
+  .home-heading {
     gap: 56px;
     padding: 56px 0;
     margin-bottom: 24px;

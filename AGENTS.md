@@ -16,11 +16,12 @@
 
 - Migrate `https://www.chopshopdance.org/` from Squarespace to a static site hosted on GitHub Pages.
 - Use `export/Squarespace-Wordpress-Export-11-07-2026.xml` as the initial content source and retain it for reference during the migration.
-- Keep editable site files in `www/` and shared HTML in `templates/`. Use `make dev` (`go tool modd`) to rebuild them into `dist/` on source changes and serve that output with `devd` and automatic browser reload. Keep watcher configuration in `modd.conf` rather than custom Go code.
-- Track Go development tools with `tool` directives in `go.mod` and retain `go.sum` so contributors use pinned dependencies without installing tools globally.
-- Keep local development accessible to non-engineers with Go installed. Document a direct Go command wherever Make is used, since Make may not be available.
-- Build the site with directly editable HTML, CSS, and JavaScript, using Go’s standard `html/template` package to share the header and footer. `make build` generates static deployment files in `dist/`; no frontend framework or additional runtime is required. The faithful migration is complete. Redesign around consistent, mobile-first layouts while preserving the migrated content and routes.
-- Format source HTML with oxfmt, including shared templates and unpublished drafts. Keep Go template conditions inside quoted attribute values so the HTML parser can handle them.
+- Keep editable site files in `www/` and shared HTML in `templates/`. Use `pnpm dev` to rebuild into `dist/` with Eleventy and serve with automatic browser reload. Keep build configuration in `eleventy.config.js`.
+- Deploy only `dist/` to GitHub Pages with `.github/workflows/deploy.yml`, after formatting checks, regression tests, and a successful build. Restrict deployment to the default branch. Keep the custom error page in `www/404.html`, emitted as `dist/404.html`. Repository Pages settings and custom-domain DNS remain launch tasks.
+- Pin development dependencies in `package.json` and retain `pnpm-lock.yaml`. Use pnpm for dependency management and scripts.
+- Keep local development accessible to non-engineers with Node.js and pnpm installed. Go and Make are not required.
+- Build directly editable HTML, CSS, and JavaScript with Eleventy and Nunjucks shared templates. `pnpm build` generates static deployment files in `dist/`; no browser framework or server runtime is required. Preserve source routes, including `/404.html`, and remove stale output after successful builds. The faithful migration is complete. Redesign around consistent, mobile-first layouts while preserving migrated content and routes.
+- Format source JavaScript, HTML, and CSS with the pinned oxfmt dependency using `pnpm format` and `pnpm format:check`, including shared templates and unpublished drafts. Keep Nunjucks conditions inside quoted attribute values so the HTML parser can handle them.
 - Link directly to local assets, including `/styles.css` and `/assets/site.js`, without cache-busting query parameters to avoid unrelated page changes during styling iterations.
 - Keep all site styling in `www/styles.css`, with shared design variables and clearly organized component and responsive sections. Use descriptive site-owned classes instead of Squarespace classes, inline styles, or page-specific stylesheets.
 - Preserve existing page routes, content, image descriptions, and photo credits. Keep the original export outside the deployed `dist/` directory.
