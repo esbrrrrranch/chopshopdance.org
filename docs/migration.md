@@ -19,7 +19,8 @@ The first pass was prepared on November 7, 2026. The WordPress XML export suppli
 
 ## Assets and integrations
 
-- All 45 site images, including the logo and hero photographs, are stored in `www/assets/images/`. Image descriptions and existing photo credits are retained. The CDN supplied optimized images, usually WebP, up to 2,000 pixels wide.
+- The 45 migrated images are stored in `www/assets/images/`. Image descriptions and existing photo credits are retained. The CDN supplied optimized images, usually WebP, up to 2,000 pixels wide.
+- The shared header uses Michael’s revised `www/assets/images/chop-shop-logo.png`, supplied on November 11, 2026. Its original proportions and the existing 287px display width are preserved; the mobile text masthead remains unchanged.
 - The 2027 application PDF is stored in `www/s/`. The asset source URLs are recorded in `export/asset-manifest.json`.
 - Fifteen YouTube embeds remain externally hosted and use HTTPS with the privacy-enhanced embed domain. Playback and availability depend on YouTube; every historical video has not been watched or independently verified.
 - The application button retains the existing Google Forms destination. Donations retain the existing Fractured Atlas destination. No submissions or transactions were made during migration.
